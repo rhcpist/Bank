@@ -111,10 +111,10 @@
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">5432</parameter>
+    <parameter key="database_port">null</parameter>
     <parameter key="database_name">bank</parameter>
-    <parameter key="database_user">manager</parameter>
-    <parameter key="database_password">123456</parameter>
+    <parameter key="database_user">root</parameter>
+    <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -688,7 +688,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <argument>/mnt/storage/private/public_html/bank/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -698,7 +698,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2300,12 +2300,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5936d61d928ea0.42355659</argument>
+      <argument>593823ab96fb39.63067376</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5936d61d928ea0.42355659</argument>
+      <argument>593823ab96fb39.63067376</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2904,10 +2904,10 @@
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
-        <argument key="port">5432</argument>
+        <argument key="port">null</argument>
         <argument key="dbname">bank</argument>
-        <argument key="user">manager</argument>
-        <argument key="password">123456</argument>
+        <argument key="user">root</argument>
+        <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -2955,7 +2955,9 @@
     <service id="doctrine.orm.quote_strategy.ansi" class="Doctrine\ORM\Mapping\AnsiQuoteStrategy" public="false"/>
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration" public="false">
       <call method="setEntityNamespaces">
-        <argument type="collection"/>
+        <argument type="collection">
+          <argument key="AppBundle">AppBundle\Entity</argument>
+        </argument>
       </call>
       <call method="setMetadataCacheImpl">
         <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2994,7 +2996,18 @@
         <argument type="service" id="doctrine.orm.default_entity_listener_resolver"/>
       </call>
     </service>
-    <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+    <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+      <argument type="service" id="annotations.cached_reader"/>
+      <argument type="collection">
+        <argument>/mnt/storage/private/public_html/bank/src/AppBundle/Entity</argument>
+      </argument>
+    </service>
+    <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>AppBundle\Entity</argument>
+      </call>
+    </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
         <argument>sf2orm_default_e0186c2272cf0f1eebefc80865f0aba7dac166696374d7a635241ddb2e157eb8</argument>
@@ -4273,7 +4286,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Uo4DiE059N</argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <argument>/mnt/storage/private/public_html/bank/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4281,7 +4294,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>6UZ8mWL0HX</argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <argument>/mnt/storage/private/public_html/bank/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4289,7 +4302,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>BerUHlQwoo</argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <argument>/mnt/storage/private/public_html/bank/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4297,7 +4310,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>jqHbP0ySND</argument>
       <argument>0</argument>
-      <argument>S9LPjeB6RIeI65Q8rquhww</argument>
+      <argument>r4OUOASXdhEUYyAehksK33</argument>
       <argument>/mnt/storage/private/public_html/bank/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
