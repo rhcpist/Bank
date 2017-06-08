@@ -1,12 +1,15 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
-    database_port: 
+    database_port: null
     database_name: bank
     database_user: root
-    database_password: 
+    database_password: null
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
     mailer_password: null
     secret: 50f6c9601a88d7bd34e9a59c127993b10b1a4ff3
+    cors_allow_origin: 'http://localhost'
+    api_name: bank
+    api_description: 'The full description of your API'

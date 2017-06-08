@@ -64,10 +64,11 @@ class Transaction
      * Set date
      *
      * @return Transaction
+     * @param \DateTime $date
      */
-    public function setDate()
+    public function setDate($date)
     {
-        $this->date = \date("d.m.Y");
+        $this->date = $date;
 
         return $this;
     }
@@ -129,5 +130,12 @@ class Transaction
     {
         return $this->customId;
     }
-}
 
+    /**
+     * Transaction constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
+}

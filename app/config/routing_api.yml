@@ -1,0 +1,3 @@
+bank:
+  type: rest
+  resource: AppBundle\Controller\CustomerController
