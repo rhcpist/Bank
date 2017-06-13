@@ -135,16 +135,30 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_get_customer:
 
-        // get_transaction
-        if (0 === strpos($pathinfo, '/transaction') && preg_match('#^/transaction/(?P<transId>[^/]++)/(?P<customId>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('GET' !== $canonicalMethod) {
-                $allow[] = 'GET';
-                goto not_get_transaction;
-            }
+        if (0 === strpos($pathinfo, '/transaction')) {
+            // get_transaction
+            if (preg_match('#^/transaction/(?P<customId>[^/]++)/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_get_transaction;
+                }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getAction',  '_format' => 'json',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getAction',  '_format' => 'json',));
+            }
+            not_get_transaction:
+
+            // get_transaction_by_filter
+            if (0 === strpos($pathinfo, '/transactions_by_filter') && preg_match('#^/transactions_by_filter/(?P<customId>[^/]++)/(?P<amount>[^/]++)/(?P<date>[^/]++)/(?P<offset>[^/]++)/(?P<limit>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_get_transaction_by_filter;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction_by_filter')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getByFilterAction',  '_format' => 'json',));
+            }
+            not_get_transaction_by_filter:
+
         }
-        not_get_transaction:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

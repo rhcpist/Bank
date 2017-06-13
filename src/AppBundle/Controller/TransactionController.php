@@ -38,14 +38,21 @@ class TransactionController extends FOSRestController implements ClassResourceIn
      *         404 = "Return when not found"
      *     }
      * )
-     * @Get("/transaction/{transId}/{customId}")
+     * @Get("/transaction/{customId}/{transId}")
      */
 
     public function getAction($customId, $transId, EntityManagerInterface $em)
     {
-        /*return $em->getRepository('AppBundle:Transaction')->findBy(
-            array('id' => $transId, 'customId' => $customId)
-        );*/
-        return $em->getRepository('AppBundle:Transaction')->getTransaction($transId, $customId);
+        return $em->getRepository('AppBundle:Transaction')->getTransaction($customId, $transId);
+    }
+
+
+    /**
+     * @Get("/transactions_by_filter/{customId}/{amount}/{date}/{offset}/{limit}")
+     * @return mixed
+     */
+    public function getByFilterAction($customId, $amount, $date, $offset, $limit, EntityManagerInterface $em)
+    {
+        return $em->getRepository('AppBundle:Transaction')->getTransactionByFilter($customId, $amount, $date, $offset, $limit);
     }
 }
