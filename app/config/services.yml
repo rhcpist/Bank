@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+#    crv.doctrine_entity_repository.transaction:
+#        class: Doctrine\ORM\EntityRepository
+#        factory: ["@doctrine", getRepository]
+#        arguments:
+#            - AppBundle\Entity\Transaction

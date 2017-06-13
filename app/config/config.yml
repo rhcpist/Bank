@@ -104,3 +104,10 @@ fos_rest:
             - { path: ^/, priorities: [ json, jsonp ], fallback_format: ~, prefer_extension: true }
     exception:
         enabled: true
+
+# JMS Serializer
+jms_serializer:
+    handlers:
+        datetime:
+            default_format: "Y-m-d"
+            default_timezone: "Europe/Kiev"

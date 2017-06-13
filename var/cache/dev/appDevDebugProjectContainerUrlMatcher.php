@@ -113,15 +113,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // homepage
-        if ('' === $trimmedPathinfo) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
-        }
-
         // nelmio_api_doc_index
         if (0 === strpos($pathinfo, '/doc') && preg_match('#^/doc(?:/(?P<view>[^/]++))?$#s', $pathinfo, $matches)) {
             if ('GET' !== $canonicalMethod) {
@@ -134,15 +125,26 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_nelmio_api_doc_index:
 
         // get_customer
-        if (0 === strpos($pathinfo, '/customers') && preg_match('#^/customers/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('GET' !== $canonicalMethod) {
-                $allow[] = 'GET';
+        if (0 === strpos($pathinfo, '/customer') && preg_match('#^/customer/(?P<name>[^/]++)/(?P<cnp>[^/]++)$#s', $pathinfo, $matches)) {
+            if ('PUT' !== $canonicalMethod) {
+                $allow[] = 'PUT';
                 goto not_get_customer;
             }
 
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_customer')), array (  '_controller' => 'AppBundle\\Controller\\CustomerController:getAction',  '_format' => 'json',));
         }
         not_get_customer:
+
+        // get_transaction
+        if (0 === strpos($pathinfo, '/transaction') && preg_match('#^/transaction/(?P<transId>[^/]++)/(?P<customId>[^/]++)$#s', $pathinfo, $matches)) {
+            if ('GET' !== $canonicalMethod) {
+                $allow[] = 'GET';
+                goto not_get_transaction;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getAction',  '_format' => 'json',));
+        }
+        not_get_transaction:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

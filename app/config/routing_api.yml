@@ -1,3 +1,7 @@
-bank:
+customer:
   type: rest
   resource: AppBundle\Controller\CustomerController
+
+transaction:
+  type: rest
+  resource: AppBundle\Controller\TransactionController

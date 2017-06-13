@@ -15,20 +15,20 @@ class __TwigTemplate_637c7dd037886b229754996ce77bbd23d5ddc811b575936cbae17d168e3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8053dea22bdc26c69d2d74df2889c32dc3c86eeb5cf55c14b511aa373f1fd082 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8053dea22bdc26c69d2d74df2889c32dc3c86eeb5cf55c14b511aa373f1fd082->enter($__internal_8053dea22bdc26c69d2d74df2889c32dc3c86eeb5cf55c14b511aa373f1fd082_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NelmioApiDocBundle:Components:motd.html.twig"));
+        $__internal_90abd956954497809d2225803683e84f0a8585e1f72ec30a0210ae334f28676c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_90abd956954497809d2225803683e84f0a8585e1f72ec30a0210ae334f28676c->enter($__internal_90abd956954497809d2225803683e84f0a8585e1f72ec30a0210ae334f28676c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NelmioApiDocBundle:Components:motd.html.twig"));
 
-        $__internal_1e84448c42664ebfca4be2888b63f7e1dd20fa628744063b5872c3bef1d9e244 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1e84448c42664ebfca4be2888b63f7e1dd20fa628744063b5872c3bef1d9e244->enter($__internal_1e84448c42664ebfca4be2888b63f7e1dd20fa628744063b5872c3bef1d9e244_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NelmioApiDocBundle:Components:motd.html.twig"));
+        $__internal_a47572b89e78e2bda2d0cf811f21b143b29ff6b1030c573c2448fdc8c9cd920e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a47572b89e78e2bda2d0cf811f21b143b29ff6b1030c573c2448fdc8c9cd920e->enter($__internal_a47572b89e78e2bda2d0cf811f21b143b29ff6b1030c573c2448fdc8c9cd920e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NelmioApiDocBundle:Components:motd.html.twig"));
 
         // line 1
         echo "<div class=\"motd\"></div>
 ";
         
-        $__internal_8053dea22bdc26c69d2d74df2889c32dc3c86eeb5cf55c14b511aa373f1fd082->leave($__internal_8053dea22bdc26c69d2d74df2889c32dc3c86eeb5cf55c14b511aa373f1fd082_prof);
+        $__internal_90abd956954497809d2225803683e84f0a8585e1f72ec30a0210ae334f28676c->leave($__internal_90abd956954497809d2225803683e84f0a8585e1f72ec30a0210ae334f28676c_prof);
 
         
-        $__internal_1e84448c42664ebfca4be2888b63f7e1dd20fa628744063b5872c3bef1d9e244->leave($__internal_1e84448c42664ebfca4be2888b63f7e1dd20fa628744063b5872c3bef1d9e244_prof);
+        $__internal_a47572b89e78e2bda2d0cf811f21b143b29ff6b1030c573c2448fdc8c9cd920e->leave($__internal_a47572b89e78e2bda2d0cf811f21b143b29ff6b1030c573c2448fdc8c9cd920e_prof);
 
     }
 
