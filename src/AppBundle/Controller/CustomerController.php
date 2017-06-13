@@ -12,9 +12,10 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use FOS\RestBundle\Controller\Annotations\Put;
+use FOS\RestBundle\Controller\Annotations\Post;
 
 
 /**
@@ -39,13 +40,22 @@ class CustomerController extends FOSRestController implements ClassResourceInter
      *         404 = "Return when not found"
      *     }
      * )
-     *  @Put("/customer/{name}/{cnp}")
+     *  @Post("/customer/{name}/{cnp}")
      */
 
-    public function getAction($name, $cnp, EntityManagerInterface $em)
+    public function addAction($name, $cnp, EntityManagerInterface $em)
     {
-        return 0;
-        #return $this->getDoctrine()->getRepository('AppBundle:Customer')->find($id);
+        $customerEntity = new Customer();
+        if ( empty($name) || empty($cnp) ) {
+            return new View("NAME OR CNP IS NULL. Not Allowed!!!", Response::HTTP_NOT_ACCEPTABLE);
+        }
+        $customerEntity->setName($name);
+        $customerEntity->setCnp($cnp);
+        $em->persist($customerEntity);
+        $em->flush();
+
+        $response = new JsonResponse();
+        return $response->setData(array( 'id' => $customerEntity->getId() ));
     }
 
 }

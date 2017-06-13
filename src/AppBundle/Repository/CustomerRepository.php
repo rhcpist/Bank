@@ -11,14 +11,5 @@ use Doctrine\ORM\EntityRepository;
  */
 class CustomerRepository extends EntityRepository
 {
-    public function createFindAllQuery()
-    {
-        return $this->_em->createQuery(
-            "
-            SELECT csm
-            FROM AppBundle:Customer csm
-            "
-        );
 
-    }
 }
