@@ -110,13 +110,13 @@ class Transaction
     /**
      * Set customId
      *
-     * @param integer $customId
+     * @param object $customer
      *
      * @return Transaction
      */
-    public function setCustomId($customId)
+    public function setCustomer($customer)
     {
-        $this->customId = $customId;
+        $this->customer = $customer;
 
         return $this;
     }
@@ -124,11 +124,11 @@ class Transaction
     /**
      * Get customId
      *
-     * @return int
+     * @return object
      */
-    public function getCustomId()
+    public function getCustomer()
     {
-        return $this->customId;
+        return $this->customer;
     }
 
     /**

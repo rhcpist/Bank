@@ -44,4 +44,18 @@ class TransactionRepository extends EntityRepository
         );
         return $query->getResult();
     }
+
+    public function getTransactionByCustomer($customId)
+    {
+        $query = $this->getEntityManager()->createQuery(
+            "
+                SELECT tr.id AS transactionId, tr.customId AS customerId, tr.amount, tr.date
+                FROM AppBundle:Transaction tr
+                WHERE tr.customId = :customId
+                ORDER BY tr.id DESC
+            "
+        );
+        $query->setParameters(array('customId' => $customId));
+        return $query->getResult()[0];
+    }
 }

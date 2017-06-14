@@ -47,7 +47,7 @@ class CustomerController extends FOSRestController implements ClassResourceInter
     {
         $customerEntity = new Customer();
         if ( empty($name) || empty($cnp) ) {
-            return new View("NAME OR CNP IS NULL. Not Allowed!!!", Response::HTTP_NOT_ACCEPTABLE);
+            return new View("Name or cnp is NULL. Not Allowed!!!", Response::HTTP_NOT_ACCEPTABLE);
         }
         $customerEntity->setName($name);
         $customerEntity->setCnp($cnp);

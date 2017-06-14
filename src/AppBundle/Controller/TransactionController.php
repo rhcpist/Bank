@@ -10,12 +10,14 @@ use FOS\RestBundle\Routing\ClassResourceInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations\Get;
+use FOS\RestBundle\Controller\Annotations\Post;
 
 /**
  * Class TransactionController
@@ -49,10 +51,34 @@ class TransactionController extends FOSRestController implements ClassResourceIn
 
     /**
      * @Get("/transactions_by_filter/{customId}/{amount}/{date}/{offset}/{limit}")
-     * @return mixed
      */
     public function getByFilterAction($customId, $amount, $date, $offset, $limit, EntityManagerInterface $em)
     {
         return $em->getRepository('AppBundle:Transaction')->getTransactionByFilter($customId, $amount, $date, $offset, $limit);
     }
+
+    /**
+     *
+     * @Post("/add_transaction/{customId}/{amount}")
+     */
+    public function addAction($customId, $amount, EntityManagerInterface $em)
+    {
+
+        $customer = $em->getRepository('AppBundle:Customer')->find( $customId );
+        if( !$customer ) {
+            return new View("Not found Customer", Response::HTTP_NOT_ACCEPTABLE);
+        }
+
+        $transactionEntity = new Transaction();
+        if ( empty($customId) || empty($amount) ) {
+            return new View("Customer id or amount is NULL. Not Allowed!!!", Response::HTTP_NOT_ACCEPTABLE);
+        }
+        $transactionEntity->setCustomer($customer);
+        $transactionEntity->setAmount($amount);
+        $em->persist($transactionEntity);
+        $em->flush();
+
+        return $em->getRepository('AppBundle:Transaction')->getTransactionByCustomer($customId);
+    }
+
 }
