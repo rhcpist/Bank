@@ -280,3 +280,5 @@ c2a599,127.0.0.1,GET,http://127.0.0.1:8000/add_transaction/11/34.70,1497527188,8
 a6486e,127.0.0.1,GET,http://127.0.0.1:8000/update_transaction/32/1.10,1497527959,e2c511,405
 e2c511,127.0.0.1,POST,http://127.0.0.1:8000/update_transaction/32/1.10,1497527959,,405
 65ea1f,127.0.0.1,PUT,http://127.0.0.1:8000/update_transaction/32/1.10,1497527970,,200
+58b247,127.0.0.1,DELETE,http://127.0.0.1:8000/delete_transaction/33,1497532091,,200
+8a8b80,127.0.0.1,DELETE,http://127.0.0.1:8000/delete_transaction/33,1497532107,,404

@@ -19,6 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Put;
+use FOS\RestBundle\Controller\Annotations\Delete;
 
 /**
  * Class TransactionController
@@ -84,7 +85,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
     /**
      * @Put("/update_transaction/{transId}/{amount}")
      */
-    public function updateAction($transId, $amount,  EntityManagerInterface $em)
+    public function updateAction($transId, $amount, EntityManagerInterface $em)
     {
         $transactionEntity = new Transaction();
         $transaction = $em->getRepository('AppBundle:Transaction')->find($transId);
@@ -95,6 +96,23 @@ class TransactionController extends FOSRestController implements ClassResourceIn
         $em->flush();
 
         return $transaction;
+    }
+
+    /**
+     * @Delete("/delete_transaction/{transId}")
+     */
+    public function deleteAction($transId, EntityManagerInterface $em)
+    {
+        $transactionEntity = new Transaction();
+        $transaction = $em->getRepository('AppBundle:Transaction')->find($transId);
+        if  ( empty($transaction) ) {
+            return new View("Error! Transaction not found", Response::HTTP_NOT_FOUND);
+        }
+
+        $em->remove($transaction);
+        $em->flush();
+
+        return new View("Transaction deleted successfully!", Response::HTTP_OK);
     }
 
 }

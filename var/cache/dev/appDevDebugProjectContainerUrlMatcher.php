@@ -124,6 +124,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_nelmio_api_doc_index:
 
+        // delete_transaction
+        if (0 === strpos($pathinfo, '/delete_transaction') && preg_match('#^/delete_transaction/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
+            if ('DELETE' !== $canonicalMethod) {
+                $allow[] = 'DELETE';
+                goto not_delete_transaction;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:deleteAction',  '_format' => 'json',));
+        }
+        not_delete_transaction:
+
         // add_customer
         if (0 === strpos($pathinfo, '/customer') && preg_match('#^/customer/(?P<name>[^/]++)/(?P<cnp>[^/]++)$#s', $pathinfo, $matches)) {
             if ('POST' !== $canonicalMethod) {
