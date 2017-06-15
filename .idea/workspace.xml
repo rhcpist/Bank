@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f61b3146-703a-4d1d-89cd-d250ed45f1a5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/0/L/FJJ5tuiTOcjuus9rQuvC" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/0/L/FJJ5tuiTOcjuus9rQuvC" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/6/A/vSmfE-jNfpz-8rtANXl8" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/6/A/vSmfE-jNfpz-8rtANXl8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Q/W/7eoYXbZ9IVA-3nZ6Nb8M" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Q/W/7eoYXbZ9IVA-3nZ6Nb8M" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/T/V/kz9y2P5WMrVEtXTNsMEs" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/T/V/kz9y2P5WMrVEtXTNsMEs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Transaction.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Transaction.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php" />
@@ -17,37 +16,54 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/8/zmXW5Vjzdo+oBWOGdQkD" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/8/zmXW5Vjzdo+oBWOGdQkD" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/S/vhrQVNkSYtkhYVYpkyT3" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/S/vhrQVNkSYtkhYVYpkyT3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/jms_serializer/AppBundle-Entity-Customer.cache.php" afterPath="$PROJECT_DIR$/var/cache/dev/jms_serializer/AppBundle-Entity-Customer.cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/jms_serializer/AppBundle-Entity-Transaction.cache.php" afterPath="$PROJECT_DIR$/var/cache/dev/jms_serializer/AppBundle-Entity-Transaction.cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/+/3/Bjl5N2cs28-muE-gcLkj" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/+/3/Bjl5N2cs28-muE-gcLkj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/L/gLMDMUX1mNGSu97OHfDg" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/-/L/gLMDMUX1mNGSu97OHfDg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/0/I/2a4tcTv72NfSQATNOFqA" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/0/I/2a4tcTv72NfSQATNOFqA" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/9/nrcxT4Vpp0fR8pS8puI3" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/9/nrcxT4Vpp0fR8pS8puI3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/D/HlMqu8Zuwirrhk9XYyvQ" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/D/HlMqu8Zuwirrhk9XYyvQ" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/I/ULbxX4uvUmMjQo4xmlfE" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/3/I/ULbxX4uvUmMjQo4xmlfE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/4/X/VDi+qgOwRe51lL7n5WCV" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/4/X/VDi+qgOwRe51lL7n5WCV" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/4/Y/msdbru2hJS8KkfaXlMaA" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/4/Y/msdbru2hJS8KkfaXlMaA" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/A/B/c+AJHJzkGHbuxprIlxc2" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/A/B/c+AJHJzkGHbuxprIlxc2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/6/rXrR4fHreAYpibsONM5B" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/6/rXrR4fHreAYpibsONM5B" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/5/X/9WUNNOQAHROzUDZUujsT" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/5/X/9WUNNOQAHROzUDZUujsT" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/A/L/ko4InzQAGk3zBnwBQF6l" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/A/L/ko4InzQAGk3zBnwBQF6l" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/F/5IpguQ1gBXiRCfPfJ4Rz" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/F/5IpguQ1gBXiRCfPfJ4Rz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/P/99toq+ehXN04ZaVhakAh" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/C/P/99toq+ehXN04ZaVhakAh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/A/28fHXG3-eLgCu1VQoMof" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/A/28fHXG3-eLgCu1VQoMof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/B/DZkMA2vlio0blcUELeNk" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/B/DZkMA2vlio0blcUELeNk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/C/6-X0uNkXwjrG2ogFfXaz" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/C/6-X0uNkXwjrG2ogFfXaz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/L/tc-Zhlkj2KIOUMzyqbJ1" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/L/tc-Zhlkj2KIOUMzyqbJ1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/Q/McVbpOtXwGAiqr68R6hv" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/D/Q/McVbpOtXwGAiqr68R6hv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/E/C/TFg2LAfmP0XTj12vekDu" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/E/C/TFg2LAfmP0XTj12vekDu" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/F/DEp6qk+Ra6K8Jfqd7B2L" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/F/DEp6qk+Ra6K8Jfqd7B2L" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/L/GUgnhYOllnIChLeS44bT" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/L/GUgnhYOllnIChLeS44bT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/G/0/BVEemR-NQR9m6i-Vn-9M" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/G/0/BVEemR-NQR9m6i-Vn-9M" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/Q/C6yVlkQinAhJBMhalUKr" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/F/Q/C6yVlkQinAhJBMhalUKr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/G/P/LE-Ioal1kM3Lo9Db6ytW" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/G/P/LE-Ioal1kM3Lo9Db6ytW" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/D/4dth18Rw7QGVkp9Mcu02" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/D/4dth18Rw7QGVkp9Mcu02" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/R/bmnw0bCTkf0qHdBWYslD" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/R/bmnw0bCTkf0qHdBWYslD" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/Y/PzQ3O5bJ-eQqsKeMnwm7" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/H/Y/PzQ3O5bJ-eQqsKeMnwm7" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/9/cZNwSJP2DI3TS8yttuI-" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/9/cZNwSJP2DI3TS8yttuI-" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/B/qkuK26oUCtmkJoBa+11v" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/B/qkuK26oUCtmkJoBa+11v" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/C/QXEKzo0l41JKWJkBa4Wf" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/J/C/QXEKzo0l41JKWJkBa4Wf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/L/M/WUxMe5ncq8cgIDqxeJ-b" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/L/M/WUxMe5ncq8cgIDqxeJ-b" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/L/1/QMQCLzUGONamDyIkR66O" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/L/1/QMQCLzUGONamDyIkR66O" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/M/F/QIPBvVSXxX9165zy2x2V" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/M/F/QIPBvVSXxX9165zy2x2V" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/M/Q/hHGT4fPU6liXdurHlM8L" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/M/Q/hHGT4fPU6liXdurHlM8L" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/O/-/ZE63eRgSkcgdN2JQNUNf" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/O/-/ZE63eRgSkcgdN2JQNUNf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/O/W/8aLFj0WRVhM5i4O-pw6U" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/O/W/8aLFj0WRVhM5i4O-pw6U" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/R/S/Zf2-fBkNgDXM4o52omTE" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/R/S/Zf2-fBkNgDXM4o52omTE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/P/E/e-dvRcNvcrSTIlJdtF-o" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/P/E/e-dvRcNvcrSTIlJdtF-o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/P/P/vXaYuTqqwT5M4ZNnHcju" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/P/P/vXaYuTqqwT5M4ZNnHcju" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/S/L/aF0ltOjN7c56FtoB-hep" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/S/L/aF0ltOjN7c56FtoB-hep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/S/M/+auLoNvKjuUUI6+usoXA" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/S/M/+auLoNvKjuUUI6+usoXA" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/T/Z/xFKueN86ryxNoP4PcJPY" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/T/Z/xFKueN86ryxNoP4PcJPY" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/0/6L7T8Ey563F+nw2TU38C" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/0/6L7T8Ey563F+nw2TU38C" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/C/1cWdWG0lTIjjgkAg8HMM" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/C/1cWdWG0lTIjjgkAg8HMM" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/Q/yTE0hsjOvXBPA7NVOqRt" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/V/Q/yTE0hsjOvXBPA7NVOqRt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/-/bC9KVChjmP7NLdK9zDsW" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/-/bC9KVChjmP7NLdK9zDsW" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/M/W7G6-22cJVMvsBmrfKbq" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/M/W7G6-22cJVMvsBmrfKbq" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/R/7QlXtu2TSPvl5X+gniJ3" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/W/R/7QlXtu2TSPvl5X+gniJ3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Y/O/AvBbFK7trQHEN1175PKE" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Y/O/AvBbFK7trQHEN1175PKE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/X/Q/UrjSvmbQAl3z08RePf6m" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/X/Q/UrjSvmbQAl3z08RePf6m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Y/V/n-b0BjJR2c-8GlzrY5e8" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Y/V/n-b0BjJR2c-8GlzrY5e8" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Z/8/lPy3h9yCeNmCB8PrYYB5" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Z/8/lPy3h9yCeNmCB8PrYYB5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Z/H/cgMgJ9IByKWeCaHEV4tP" afterPath="$PROJECT_DIR$/var/cache/dev/pools/jqHbP0ySND/Z/H/cgMgJ9IByKWeCaHEV4tP" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_86nltv7stde8o5d942npfbcqh9" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_86nltv7stde8o5d942npfbcqh9" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_e2ln16i4oe8ld9hnpus7tnp4p1" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_e2ln16i4oe8ld9hnpus7tnp4p1" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +76,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="934">
-              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="458">
+              <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -73,8 +89,8 @@
       <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="390">
+              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -83,28 +99,18 @@
       <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="441">
+              <caret line="153" column="5" lean-forward="true" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransactionRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TransactionRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Customer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="103" column="52" lean-forward="false" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
+            <state relative-caret-position="408">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -115,16 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
               <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="112" column="43" lean-forward="false" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -148,6 +144,7 @@
       <find>sensio</find>
       <find>for</find>
       <find>custom</find>
+      <find>getTransactionByCustomer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,9 +172,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CustomerRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Customer.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Transaction.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php" />
       </list>
     </option>
   </component>
@@ -211,6 +208,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,7 +367,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,16 +431,16 @@
     <frame x="1279" y="-1" width="1282" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26009694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2641357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -479,7 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -487,7 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -603,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="239" column="20" lean-forward="false" selection-start-line="239" selection-start-column="20" selection-end-line="239" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,18 +705,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/ObjectManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="128" column="20" lean-forward="false" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="747">
+          <caret line="112" column="43" lean-forward="false" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -746,58 +759,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="112" column="43" lean-forward="false" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
+        <state relative-caret-position="390">
+          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TransactionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        <state relative-caret-position="441">
+          <caret line="153" column="5" lean-forward="true" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TransactionRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="408">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
           <folding />
         </state>
       </provider>

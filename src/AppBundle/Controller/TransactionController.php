@@ -18,6 +18,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
+use FOS\RestBundle\Controller\Annotations\Put;
 
 /**
  * Class TransactionController
@@ -28,8 +29,6 @@ class TransactionController extends FOSRestController implements ClassResourceIn
     /**
      * Gets Transaction
      *
-     * @param int $id
-     * @return mixed
      * @throws \Doctrine\ORM\NoResultException
      * @throws \Doctrine\ORM\NonUniqueResultException
      *
@@ -74,11 +73,28 @@ class TransactionController extends FOSRestController implements ClassResourceIn
             return new View("Customer id or amount is NULL. Not Allowed!!!", Response::HTTP_NOT_ACCEPTABLE);
         }
         $transactionEntity->setCustomer($customer);
+        $transactionEntity->setCustomerId($customId);
         $transactionEntity->setAmount($amount);
         $em->persist($transactionEntity);
         $em->flush();
 
-        return $em->getRepository('AppBundle:Transaction')->getTransactionByCustomer($customId);
+        return $em->getRepository('AppBundle:Transaction')->findBy(array('customId' => $customId), array('id' => 'DESC'), 1, 0)[0];
+    }
+
+    /**
+     * @Put("/update_transaction/{transId}/{amount}")
+     */
+    public function updateAction($transId, $amount,  EntityManagerInterface $em)
+    {
+        $transactionEntity = new Transaction();
+        $transaction = $em->getRepository('AppBundle:Transaction')->find($transId);
+        if ( !$transaction ) {
+            return new View("Error! Transaction not exist!!!", Response::HTTP_NOT_FOUND);
+        }
+        $transaction->setAmount($amount);
+        $em->flush();
+
+        return $transaction;
     }
 
 }

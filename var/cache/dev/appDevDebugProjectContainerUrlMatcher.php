@@ -171,6 +171,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_add_transaction:
 
+        // update_transaction
+        if (0 === strpos($pathinfo, '/update_transaction') && preg_match('#^/update_transaction/(?P<transId>[^/]++)/(?P<amount>[^/]++)$#s', $pathinfo, $matches)) {
+            if ('PUT' !== $canonicalMethod) {
+                $allow[] = 'PUT';
+                goto not_update_transaction;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'update_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:updateAction',  '_format' => 'json',));
+        }
+        not_update_transaction:
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

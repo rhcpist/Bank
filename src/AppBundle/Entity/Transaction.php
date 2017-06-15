@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Transaction
  *
  * @ORM\Table(name="transaction")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TransactionRepository")
+ * @JMS\ExclusionPolicy("all")
  */
 class Transaction
 {
@@ -18,6 +20,8 @@ class Transaction
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @JMS\SerializedName("transactionId")
+     * @JMS\Expose
      */
     private $id;
 
@@ -25,6 +29,7 @@ class Transaction
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     * @JMS\Expose
      */
     private $date;
 
@@ -32,6 +37,7 @@ class Transaction
      * @var string
      *
      * @ORM\Column(name="amount", type="decimal", precision=12, scale=2)
+     * @JMS\Expose
      */
     private $amount;
 
@@ -39,6 +45,8 @@ class Transaction
      * @var int
      *
      * @ORM\Column(name="customId", type="integer")
+     * @JMS\Expose
+     * @JMS\SerializedName("customerId")
      */
     private $customId;
 
@@ -108,7 +116,7 @@ class Transaction
     }
 
     /**
-     * Set customId
+     * Set customer
      *
      * @param object $customer
      *
@@ -122,13 +130,37 @@ class Transaction
     }
 
     /**
-     * Get customId
+     * Get customer
      *
      * @return object
      */
     public function getCustomer()
     {
         return $this->customer;
+    }
+
+    /**
+     * Set customId
+     *
+     * @param int $customId
+     *
+     * @return Transaction
+     */
+    public function setCustomerId($customId)
+    {
+        $this->customId = $customId;
+
+        return $this;
+    }
+
+    /**
+     * Get customId
+     *
+     * @return int
+     */
+    public function getCustomId()
+    {
+        return $this->customId;
     }
 
     /**
