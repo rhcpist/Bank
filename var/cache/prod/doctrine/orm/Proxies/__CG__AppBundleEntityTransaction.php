@@ -235,12 +235,34 @@ class Transaction extends \AppBundle\Entity\Transaction implements \Doctrine\ORM
     /**
      * {@inheritDoc}
      */
-    public function setCustomId($customId)
+    public function setCustomer($customer)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCustomId', [$customId]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCustomer', [$customer]);
 
-        return parent::setCustomId($customId);
+        return parent::setCustomer($customer);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCustomer()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCustomer', []);
+
+        return parent::getCustomer();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCustomerId($customId)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCustomerId', [$customId]);
+
+        return parent::setCustomerId($customId);
     }
 
     /**
