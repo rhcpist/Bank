@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Controller\Annotations\Post;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 
 /**
@@ -40,7 +41,8 @@ class CustomerController extends FOSRestController implements ClassResourceInter
      *         404 = "Return when not found"
      *     }
      * )
-     *  @Post("/customer/{name}/{cnp}")
+     * @Post("/customer/{name}/{cnp}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
 
     public function addAction($name, $cnp, EntityManagerInterface $em)

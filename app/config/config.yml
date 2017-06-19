@@ -101,7 +101,7 @@ fos_rest:
         include_format:  false
     format_listener:
         rules:
-            - { path: ^/, priorities: [ json, jsonp ], fallback_format: ~, prefer_extension: true }
+            - { path: ^/api, priorities: [ json, jsonp ], fallback_format: ~, prefer_extension: true }
     exception:
         enabled: true
 

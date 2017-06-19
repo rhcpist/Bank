@@ -20,6 +20,7 @@ use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Put;
 use FOS\RestBundle\Controller\Annotations\Delete;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 /**
  * Class TransactionController
@@ -41,6 +42,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
      *     }
      * )
      * @Get("/transaction/{customId}/{transId}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
 
     public function getAction($customId, $transId, EntityManagerInterface $em)
@@ -51,6 +53,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
 
     /**
      * @Get("/transactions_by_filter/{customId}/{amount}/{date}/{offset}/{limit}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
     public function getByFilterAction($customId, $amount, $date, $offset, $limit, EntityManagerInterface $em)
     {
@@ -60,6 +63,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
     /**
      *
      * @Post("/add_transaction/{customId}/{amount}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
     public function addAction($customId, $amount, EntityManagerInterface $em)
     {
@@ -84,6 +88,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
 
     /**
      * @Put("/update_transaction/{transId}/{amount}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
     public function updateAction($transId, $amount, EntityManagerInterface $em)
     {
@@ -100,6 +105,7 @@ class TransactionController extends FOSRestController implements ClassResourceIn
 
     /**
      * @Delete("/delete_transaction/{transId}")
+     * @Cache(public=true, maxage="3600", smaxage="3600")
      */
     public function deleteAction($transId, EntityManagerInterface $em)
     {

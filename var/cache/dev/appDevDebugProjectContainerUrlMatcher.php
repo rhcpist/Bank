@@ -124,74 +124,77 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
         not_nelmio_api_doc_index:
 
-        // delete_transaction
-        if (0 === strpos($pathinfo, '/delete_transaction') && preg_match('#^/delete_transaction/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('DELETE' !== $canonicalMethod) {
-                $allow[] = 'DELETE';
-                goto not_delete_transaction;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:deleteAction',  '_format' => 'json',));
-        }
-        not_delete_transaction:
-
-        // add_customer
-        if (0 === strpos($pathinfo, '/customer') && preg_match('#^/customer/(?P<name>[^/]++)/(?P<cnp>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('POST' !== $canonicalMethod) {
-                $allow[] = 'POST';
-                goto not_add_customer;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_customer')), array (  '_controller' => 'AppBundle\\Controller\\CustomerController:addAction',  '_format' => 'json',));
-        }
-        not_add_customer:
-
-        if (0 === strpos($pathinfo, '/transaction')) {
-            // get_transaction
-            if (preg_match('#^/transaction/(?P<customId>[^/]++)/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_get_transaction;
+        if (0 === strpos($pathinfo, '/api')) {
+            // add_customer
+            if (0 === strpos($pathinfo, '/api/customer') && preg_match('#^/api/customer/(?P<name>[^/]++)/(?P<cnp>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('POST' !== $canonicalMethod) {
+                    $allow[] = 'POST';
+                    goto not_add_customer;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getAction',  '_format' => 'json',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_customer')), array (  '_controller' => 'AppBundle\\Controller\\CustomerController:addAction',  '_format' => 'json',));
             }
-            not_get_transaction:
+            not_add_customer:
 
-            // get_transaction_by_filter
-            if (0 === strpos($pathinfo, '/transactions_by_filter') && preg_match('#^/transactions_by_filter/(?P<customId>[^/]++)/(?P<amount>[^/]++)/(?P<date>[^/]++)/(?P<offset>[^/]++)/(?P<limit>[^/]++)$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_get_transaction_by_filter;
+            if (0 === strpos($pathinfo, '/api/transaction')) {
+                // get_transaction
+                if (preg_match('#^/api/transaction/(?P<customId>[^/]++)/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_get_transaction;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getAction',  '_format' => 'json',));
+                }
+                not_get_transaction:
+
+                // get_transaction_by_filter
+                if (0 === strpos($pathinfo, '/api/transactions_by_filter') && preg_match('#^/api/transactions_by_filter/(?P<customId>[^/]++)/(?P<amount>[^/]++)/(?P<date>[^/]++)/(?P<offset>[^/]++)/(?P<limit>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_get_transaction_by_filter;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction_by_filter')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getByFilterAction',  '_format' => 'json',));
+                }
+                not_get_transaction_by_filter:
+
+            }
+
+            // add_transaction
+            if (0 === strpos($pathinfo, '/api/add_transaction') && preg_match('#^/api/add_transaction/(?P<customId>[^/]++)/(?P<amount>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('POST' !== $canonicalMethod) {
+                    $allow[] = 'POST';
+                    goto not_add_transaction;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'get_transaction_by_filter')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:getByFilterAction',  '_format' => 'json',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:addAction',  '_format' => 'json',));
             }
-            not_get_transaction_by_filter:
+            not_add_transaction:
+
+            // update_transaction
+            if (0 === strpos($pathinfo, '/api/update_transaction') && preg_match('#^/api/update_transaction/(?P<transId>[^/]++)/(?P<amount>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('PUT' !== $canonicalMethod) {
+                    $allow[] = 'PUT';
+                    goto not_update_transaction;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'update_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:updateAction',  '_format' => 'json',));
+            }
+            not_update_transaction:
+
+            // delete_transaction
+            if (0 === strpos($pathinfo, '/api/delete_transaction') && preg_match('#^/api/delete_transaction/(?P<transId>[^/]++)$#s', $pathinfo, $matches)) {
+                if ('DELETE' !== $canonicalMethod) {
+                    $allow[] = 'DELETE';
+                    goto not_delete_transaction;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:deleteAction',  '_format' => 'json',));
+            }
+            not_delete_transaction:
 
         }
-
-        // add_transaction
-        if (0 === strpos($pathinfo, '/add_transaction') && preg_match('#^/add_transaction/(?P<customId>[^/]++)/(?P<amount>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('POST' !== $canonicalMethod) {
-                $allow[] = 'POST';
-                goto not_add_transaction;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'add_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:addAction',  '_format' => 'json',));
-        }
-        not_add_transaction:
-
-        // update_transaction
-        if (0 === strpos($pathinfo, '/update_transaction') && preg_match('#^/update_transaction/(?P<transId>[^/]++)/(?P<amount>[^/]++)$#s', $pathinfo, $matches)) {
-            if ('PUT' !== $canonicalMethod) {
-                $allow[] = 'PUT';
-                goto not_update_transaction;
-            }
-
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'update_transaction')), array (  '_controller' => 'AppBundle\\Controller\\TransactionController:updateAction',  '_format' => 'json',));
-        }
-        not_update_transaction:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
