@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: ~
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -27,6 +27,7 @@ framework:
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id: session.handler.native_file
         save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        cookie_lifetime: 7200
     fragments: ~
     http_method_override: true
     assets: ~
@@ -120,4 +121,4 @@ fos_user:
     user_class: AppBundle\Entity\User
     from_email:
         address: admin@mail.com
-        sender_name: Dmitriy
+        sender_name: admin
