@@ -9,9 +9,6 @@
  * file that was distributed with this source code.
  */
 
-class_exists('Twig_Environment');
-class_exists('Twig_Node');
-
 /**
  * Twig_BaseNodeVisitor can be used to make node visitors compatible with Twig 1.x and 2.x.
  *
@@ -19,21 +16,13 @@ class_exists('Twig_Node');
  */
 abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
 {
-    final public function enterNode(Twig_NodeInterface $node, Twig_Environment $env)
+    final public function enterNode(Twig_Node $node, Twig_Environment $env)
     {
-        if (!$node instanceof Twig_Node) {
-            throw new LogicException('Twig_BaseNodeVisitor only supports Twig_Node instances.');
-        }
-
         return $this->doEnterNode($node, $env);
     }
 
-    final public function leaveNode(Twig_NodeInterface $node, Twig_Environment $env)
+    final public function leaveNode(Twig_Node $node, Twig_Environment $env)
     {
-        if (!$node instanceof Twig_Node) {
-            throw new LogicException('Twig_BaseNodeVisitor only supports Twig_Node instances.');
-        }
-
         return $this->doLeaveNode($node, $env);
     }
 
@@ -53,3 +42,5 @@ abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
 }
 
 class_alias('Twig_BaseNodeVisitor', 'Twig\NodeVisitor\AbstractNodeVisitor', false);
+class_exists('Twig_Environment');
+class_exists('Twig_Node');

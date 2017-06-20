@@ -9,9 +9,6 @@
  * file that was distributed with this source code.
  */
 
-class_exists('Twig_Environment');
-class_exists('Twig_Node');
-
 use PHPUnit\Framework\TestCase;
 
 abstract class Twig_Test_NodeTestCase extends TestCase
@@ -52,25 +49,15 @@ abstract class Twig_Test_NodeTestCase extends TestCase
     {
         $line = $line > 0 ? "// line {$line}\n" : '';
 
-        if (PHP_VERSION_ID >= 70000) {
-            return sprintf('%s($context["%s"] ?? null)', $line, $name, $name);
-        }
-
-        if (PHP_VERSION_ID >= 50400) {
-            return sprintf('%s(isset($context["%s"]) ? $context["%s"] : null)', $line, $name, $name);
-        }
-
-        return sprintf('%s$this->getContext($context, "%s")', $line, $name);
+        return sprintf('%s($context["%s"] ?? null)', $line, $name, $name);
     }
 
     protected function getAttributeGetter()
     {
-        if (function_exists('twig_template_get_attributes')) {
-            return 'twig_template_get_attributes($this, ';
-        }
-
-        return '$this->getAttribute(';
+        return 'twig_get_attribute($this->env, $this->getSourceContext(), ';
     }
 }
 
 class_alias('Twig_Test_NodeTestCase', 'Twig\Test\NodeTestCase', false);
+class_exists('Twig_Environment');
+class_exists('Twig_Node');

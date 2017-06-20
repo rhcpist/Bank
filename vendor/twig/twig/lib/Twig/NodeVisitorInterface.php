@@ -9,9 +9,6 @@
  * file that was distributed with this source code.
  */
 
-class_exists('Twig_Environment');
-class_exists('Twig_Node');
-
 /**
  * Twig_NodeVisitorInterface is the interface the all node visitor classes must implement.
  *
@@ -22,16 +19,16 @@ interface Twig_NodeVisitorInterface
     /**
      * Called before child nodes are visited.
      *
-     * @return Twig_NodeInterface The modified node
+     * @return Twig_Node The modified node
      */
-    public function enterNode(Twig_NodeInterface $node, Twig_Environment $env);
+    public function enterNode(Twig_Node $node, Twig_Environment $env);
 
     /**
      * Called after child nodes are visited.
      *
-     * @return Twig_NodeInterface|false The modified node or false if the node must be removed
+     * @return Twig_Node|false The modified node or false if the node must be removed
      */
-    public function leaveNode(Twig_NodeInterface $node, Twig_Environment $env);
+    public function leaveNode(Twig_Node $node, Twig_Environment $env);
 
     /**
      * Returns the priority for this visitor.
@@ -44,3 +41,5 @@ interface Twig_NodeVisitorInterface
 }
 
 class_alias('Twig_NodeVisitorInterface', 'Twig\NodeVisitor\NodeVisitorInterface', false);
+class_exists('Twig_Environment');
+class_exists('Twig_Node');
