@@ -39,6 +39,11 @@ class appDevDebugProjectContainer extends Container
             'appbundle\\controller\\transactioncontroller' => 'AppBundle\\Controller\\TransactionController',
             'jms\\serializer\\arraytransformerinterface' => 'JMS\\Serializer\\ArrayTransformerInterface',
             'jms\\serializer\\serializerinterface' => 'JMS\\Serializer\\SerializerInterface',
+            'lexik\\bundle\\jwtauthenticationbundle\\encoder\\jwtencoderinterface' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\Encoder\\JWTEncoderInterface',
+            'lexik\\bundle\\jwtauthenticationbundle\\services\\jwsprovider\\jwsproviderinterface' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWSProvider\\JWSProviderInterface',
+            'lexik\\bundle\\jwtauthenticationbundle\\services\\jwttokeninterface' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWTTokenInterface',
+            'lexik\\bundle\\jwtauthenticationbundle\\services\\jwttokenmanagerinterface' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWTTokenManagerInterface',
+            'lexik\\bundle\\jwtauthenticationbundle\\tokenextractor\\tokenextractorinterface' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\TokenExtractor\\TokenExtractorInterface',
             'symfony\\component\\security\\core\\authorization\\authorizationcheckerinterface' => 'Symfony\\Component\\Security\\Core\\Authorization\\AuthorizationCheckerInterface',
             'symfony\\component\\security\\core\\encoder\\userpasswordencoderinterface' => 'Symfony\\Component\\Security\\Core\\Encoder\\UserPasswordEncoderInterface',
         );
@@ -48,6 +53,8 @@ class appDevDebugProjectContainer extends Container
             'AppBundle\\Controller\\CustomerController' => 'getAppBundle_Controller_CustomerControllerService',
             'AppBundle\\Controller\\DefaultController' => 'getAppBundle_Controller_DefaultControllerService',
             'AppBundle\\Controller\\TransactionController' => 'getAppBundle_Controller_TransactionControllerService',
+            'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWSProvider\\JWSProviderInterface' => 'getLexik_Bundle_JWTAuthenticationBundle_Services_JWSProvider_JWSProviderInterfaceService',
+            'Lexik\\Bundle\\JWTAuthenticationBundle\\TokenExtractor\\TokenExtractorInterface' => 'getLexik_Bundle_JWTAuthenticationBundle_TokenExtractor_TokenExtractorInterfaceService',
             'annotation_reader' => 'getAnnotationReaderService',
             'annotations.reader' => 'getAnnotations_ReaderService',
             'argument_resolver.default' => 'getArgumentResolver_DefaultService',
@@ -235,6 +242,16 @@ class appDevDebugProjectContainer extends Container
             'jms_serializer.xml_serialization_visitor' => 'getJmsSerializer_XmlSerializationVisitorService',
             'jms_serializer.yaml_serialization_visitor' => 'getJmsSerializer_YamlSerializationVisitorService',
             'kernel.class_cache.cache_warmer' => 'getKernel_ClassCache_CacheWarmerService',
+            'lexik_jwt_authentication.encoder.default' => 'getLexikJwtAuthentication_Encoder_DefaultService',
+            'lexik_jwt_authentication.encoder.lcobucci' => 'getLexikJwtAuthentication_Encoder_LcobucciService',
+            'lexik_jwt_authentication.extractor.authorization_header_extractor' => 'getLexikJwtAuthentication_Extractor_AuthorizationHeaderExtractorService',
+            'lexik_jwt_authentication.extractor.cookie_extractor' => 'getLexikJwtAuthentication_Extractor_CookieExtractorService',
+            'lexik_jwt_authentication.extractor.query_parameter_extractor' => 'getLexikJwtAuthentication_Extractor_QueryParameterExtractorService',
+            'lexik_jwt_authentication.handler.authentication_failure' => 'getLexikJwtAuthentication_Handler_AuthenticationFailureService',
+            'lexik_jwt_authentication.handler.authentication_success' => 'getLexikJwtAuthentication_Handler_AuthenticationSuccessService',
+            'lexik_jwt_authentication.jwt_manager' => 'getLexikJwtAuthentication_JwtManagerService',
+            'lexik_jwt_authentication.key_loader' => 'getLexikJwtAuthentication_KeyLoaderService',
+            'lexik_jwt_authentication.security.guard.jwt_token_authenticator' => 'getLexikJwtAuthentication_Security_Guard_JwtTokenAuthenticatorService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
             'monolog.activation_strategy.not_found' => 'getMonolog_ActivationStrategy_NotFoundService',
@@ -284,26 +301,37 @@ class appDevDebugProjectContainer extends Container
             'security.access.authenticated_voter' => 'getSecurity_Access_AuthenticatedVoterService',
             'security.access.expression_voter' => 'getSecurity_Access_ExpressionVoterService',
             'security.access.role_hierarchy_voter' => 'getSecurity_Access_RoleHierarchyVoterService',
+            'security.access_listener' => 'getSecurity_AccessListenerService',
+            'security.access_map' => 'getSecurity_AccessMapService',
             'security.authentication.guard_handler' => 'getSecurity_Authentication_GuardHandlerService',
             'security.authentication.manager' => 'getSecurity_Authentication_ManagerService',
+            'security.authentication.provider.anonymous.login' => 'getSecurity_Authentication_Provider_Anonymous_LoginService',
             'security.authentication.provider.anonymous.main' => 'getSecurity_Authentication_Provider_Anonymous_MainService',
+            'security.authentication.provider.dao.login' => 'getSecurity_Authentication_Provider_Dao_LoginService',
             'security.authentication.provider.dao.main' => 'getSecurity_Authentication_Provider_Dao_MainService',
+            'security.authentication.provider.guard.api' => 'getSecurity_Authentication_Provider_Guard_ApiService',
             'security.authentication.provider.rememberme.main' => 'getSecurity_Authentication_Provider_Rememberme_MainService',
             'security.authentication.rememberme.services.simplehash.main' => 'getSecurity_Authentication_Rememberme_Services_Simplehash_MainService',
             'security.authentication.session_strategy' => 'getSecurity_Authentication_SessionStrategyService',
             'security.authentication.trust_resolver' => 'getSecurity_Authentication_TrustResolverService',
             'security.authentication_utils' => 'getSecurity_AuthenticationUtilsService',
             'security.authorization_checker' => 'getSecurity_AuthorizationCheckerService',
+            'security.channel_listener' => 'getSecurity_ChannelListenerService',
             'security.csrf.token_manager' => 'getSecurity_Csrf_TokenManagerService',
             'security.encoder_factory' => 'getSecurity_EncoderFactoryService',
             'security.firewall' => 'getSecurity_FirewallService',
             'security.firewall.map' => 'getSecurity_Firewall_MapService',
+            'security.firewall.map.context.api' => 'getSecurity_Firewall_Map_Context_ApiService',
             'security.firewall.map.context.dev' => 'getSecurity_Firewall_Map_Context_DevService',
+            'security.firewall.map.context.login' => 'getSecurity_Firewall_Map_Context_LoginService',
             'security.firewall.map.context.main' => 'getSecurity_Firewall_Map_Context_MainService',
+            'security.http_utils' => 'getSecurity_HttpUtilsService',
             'security.logout_url_generator' => 'getSecurity_LogoutUrlGeneratorService',
             'security.password_encoder' => 'getSecurity_PasswordEncoderService',
             'security.rememberme.response_listener' => 'getSecurity_Rememberme_ResponseListenerService',
+            'security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442' => 'getSecurity_RequestMatcher_0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442Service',
             'security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d' => 'getSecurity_RequestMatcher_5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1dService',
+            'security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b' => 'getSecurity_RequestMatcher_83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11bService',
             'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db' => 'getSecurity_RequestMatcher_A64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60dbService',
             'security.role_hierarchy' => 'getSecurity_RoleHierarchyService',
             'security.token_storage' => 'getSecurity_TokenStorageService',
@@ -445,16 +473,25 @@ class appDevDebugProjectContainer extends Container
             'security.access.authenticated_voter' => true,
             'security.access.expression_voter' => true,
             'security.access.role_hierarchy_voter' => true,
+            'security.access_listener' => true,
+            'security.access_map' => true,
             'security.authentication.manager' => true,
+            'security.authentication.provider.anonymous.login' => true,
             'security.authentication.provider.anonymous.main' => true,
+            'security.authentication.provider.dao.login' => true,
             'security.authentication.provider.dao.main' => true,
+            'security.authentication.provider.guard.api' => true,
             'security.authentication.provider.rememberme.main' => true,
             'security.authentication.rememberme.services.simplehash.main' => true,
             'security.authentication.session_strategy' => true,
             'security.authentication.trust_resolver' => true,
+            'security.channel_listener' => true,
             'security.firewall.map' => true,
+            'security.http_utils' => true,
             'security.logout_url_generator' => true,
+            'security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442' => true,
             'security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d' => true,
+            'security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b' => true,
             'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db' => true,
             'security.role_hierarchy' => true,
             'security.user_checker' => true,
@@ -470,6 +507,9 @@ class appDevDebugProjectContainer extends Container
         $this->aliases = array(
             'JMS\\Serializer\\ArrayTransformerInterface' => 'jms_serializer',
             'JMS\\Serializer\\SerializerInterface' => 'jms_serializer',
+            'Lexik\\Bundle\\JWTAuthenticationBundle\\Encoder\\JWTEncoderInterface' => 'lexik_jwt_authentication.encoder.default',
+            'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWTTokenInterface' => 'lexik_jwt_authentication.jwt_manager',
+            'Lexik\\Bundle\\JWTAuthenticationBundle\\Services\\JWTTokenManagerInterface' => 'lexik_jwt_authentication.jwt_manager',
             'Symfony\\Component\\Security\\Core\\Authorization\\AuthorizationCheckerInterface' => 'security.authorization_checker',
             'Symfony\\Component\\Security\\Core\\Encoder\\UserPasswordEncoderInterface' => 'security.password_encoder',
             'cache.app_clearer' => 'cache.default_clearer',
@@ -482,6 +522,8 @@ class appDevDebugProjectContainer extends Container
             'fos_rest.router' => 'router',
             'fos_rest.templating' => 'templating',
             'fos_user.util.username_canonicalizer' => 'fos_user.util.email_canonicalizer',
+            'lexik_jwt_authentication.encoder' => 'lexik_jwt_authentication.encoder.default',
+            'lexik_jwt_authentication.jwt_token_authenticator' => 'lexik_jwt_authentication.security.guard.jwt_token_authenticator',
             'mailer' => 'swiftmailer.mailer.default',
             'session.storage' => 'session.storage.native',
             'swiftmailer.mailer' => 'swiftmailer.mailer.default',
@@ -561,6 +603,32 @@ class appDevDebugProjectContainer extends Container
     protected function getAppBundle_Controller_TransactionControllerService()
     {
         return $this->services['AppBundle\Controller\TransactionController'] = new \AppBundle\Controller\TransactionController();
+    }
+
+    /**
+     * Gets the 'Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\JWSProviderInterface' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\DefaultJWSProvider A Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\DefaultJWSProvider instance
+     */
+    protected function getLexik_Bundle_JWTAuthenticationBundle_Services_JWSProvider_JWSProviderInterfaceService()
+    {
+        return $this->services['Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\JWSProviderInterface'] = new \Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\DefaultJWSProvider(${($_ = isset($this->services['lexik_jwt_authentication.key_loader']) ? $this->services['lexik_jwt_authentication.key_loader'] : $this->get('lexik_jwt_authentication.key_loader')) && false ?: '_'}, 'openssl', 'RS256', 3600);
+    }
+
+    /**
+     * Gets the 'Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\TokenExtractorInterface' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\ChainTokenExtractor A Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\ChainTokenExtractor instance
+     */
+    protected function getLexik_Bundle_JWTAuthenticationBundle_TokenExtractor_TokenExtractorInterfaceService()
+    {
+        return $this->services['Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\TokenExtractorInterface'] = new \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\ChainTokenExtractor(array(0 => ${($_ = isset($this->services['lexik_jwt_authentication.extractor.authorization_header_extractor']) ? $this->services['lexik_jwt_authentication.extractor.authorization_header_extractor'] : $this->get('lexik_jwt_authentication.extractor.authorization_header_extractor')) && false ?: '_'}));
     }
 
     /**
@@ -2973,6 +3041,140 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'lexik_jwt_authentication.encoder.default' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder A Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder instance
+     */
+    protected function getLexikJwtAuthentication_Encoder_DefaultService()
+    {
+        return $this->services['lexik_jwt_authentication.encoder.default'] = new \Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder(${($_ = isset($this->services['Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\JWSProviderInterface']) ? $this->services['Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\JWSProviderInterface'] : $this->get('Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\JWSProviderInterface')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.encoder.lcobucci' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder A Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder instance
+     */
+    protected function getLexikJwtAuthentication_Encoder_LcobucciService()
+    {
+        return $this->services['lexik_jwt_authentication.encoder.lcobucci'] = new \Lexik\Bundle\JWTAuthenticationBundle\Encoder\DefaultEncoder(new \Lexik\Bundle\JWTAuthenticationBundle\Services\JWSProvider\LcobucciJWSProvider(new \Lexik\Bundle\JWTAuthenticationBundle\Services\KeyLoader\RawKeyLoader(($this->targetDirs[3].'/app/../var/jwt/private.pem'), ($this->targetDirs[3].'/app/../var/jwt/public.pem'), '123456'), 'openssl', 'RS256', 3600));
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.extractor.authorization_header_extractor' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor A Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor instance
+     */
+    protected function getLexikJwtAuthentication_Extractor_AuthorizationHeaderExtractorService()
+    {
+        return $this->services['lexik_jwt_authentication.extractor.authorization_header_extractor'] = new \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\AuthorizationHeaderTokenExtractor('Bearer', 'Authorization');
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.extractor.cookie_extractor' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor A Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor instance
+     */
+    protected function getLexikJwtAuthentication_Extractor_CookieExtractorService()
+    {
+        return $this->services['lexik_jwt_authentication.extractor.cookie_extractor'] = new \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\CookieTokenExtractor('');
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.extractor.query_parameter_extractor' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\QueryParameterTokenExtractor A Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\QueryParameterTokenExtractor instance
+     */
+    protected function getLexikJwtAuthentication_Extractor_QueryParameterExtractorService()
+    {
+        return $this->services['lexik_jwt_authentication.extractor.query_parameter_extractor'] = new \Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\QueryParameterTokenExtractor('');
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.handler.authentication_failure' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationFailureHandler A Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationFailureHandler instance
+     */
+    protected function getLexikJwtAuthentication_Handler_AuthenticationFailureService()
+    {
+        return $this->services['lexik_jwt_authentication.handler.authentication_failure'] = new \Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationFailureHandler(${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.handler.authentication_success' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationSuccessHandler A Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationSuccessHandler instance
+     */
+    protected function getLexikJwtAuthentication_Handler_AuthenticationSuccessService()
+    {
+        return $this->services['lexik_jwt_authentication.handler.authentication_success'] = new \Lexik\Bundle\JWTAuthenticationBundle\Security\Http\Authentication\AuthenticationSuccessHandler(${($_ = isset($this->services['lexik_jwt_authentication.jwt_manager']) ? $this->services['lexik_jwt_authentication.jwt_manager'] : $this->get('lexik_jwt_authentication.jwt_manager')) && false ?: '_'}, ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.jwt_manager' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager A Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager instance
+     */
+    protected function getLexikJwtAuthentication_JwtManagerService()
+    {
+        $this->services['lexik_jwt_authentication.jwt_manager'] = $instance = new \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager(${($_ = isset($this->services['lexik_jwt_authentication.encoder.default']) ? $this->services['lexik_jwt_authentication.encoder.default'] : $this->get('lexik_jwt_authentication.encoder.default')) && false ?: '_'}, ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'});
+
+        $instance->setUserIdentityField('username');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.key_loader' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Services\KeyLoader\OpenSSLKeyLoader A Lexik\Bundle\JWTAuthenticationBundle\Services\KeyLoader\OpenSSLKeyLoader instance
+     */
+    protected function getLexikJwtAuthentication_KeyLoaderService()
+    {
+        return $this->services['lexik_jwt_authentication.key_loader'] = new \Lexik\Bundle\JWTAuthenticationBundle\Services\KeyLoader\OpenSSLKeyLoader(($this->targetDirs[3].'/app/../var/jwt/private.pem'), ($this->targetDirs[3].'/app/../var/jwt/public.pem'), '123456');
+    }
+
+    /**
+     * Gets the 'lexik_jwt_authentication.security.guard.jwt_token_authenticator' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Lexik\Bundle\JWTAuthenticationBundle\Security\Guard\JWTTokenAuthenticator A Lexik\Bundle\JWTAuthenticationBundle\Security\Guard\JWTTokenAuthenticator instance
+     */
+    protected function getLexikJwtAuthentication_Security_Guard_JwtTokenAuthenticatorService()
+    {
+        return $this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator'] = new \Lexik\Bundle\JWTAuthenticationBundle\Security\Guard\JWTTokenAuthenticator(${($_ = isset($this->services['lexik_jwt_authentication.jwt_manager']) ? $this->services['lexik_jwt_authentication.jwt_manager'] : $this->get('lexik_jwt_authentication.jwt_manager')) && false ?: '_'}, ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'}, ${($_ = isset($this->services['Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\TokenExtractorInterface']) ? $this->services['Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\TokenExtractorInterface'] : $this->get('Lexik\Bundle\JWTAuthenticationBundle\TokenExtractor\TokenExtractorInterface')) && false ?: '_'});
+    }
+
+    /**
      * Gets the 'locale_listener' service.
      *
      * This service is shared.
@@ -3807,6 +4009,23 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'security.firewall.map.context.api' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Bundle\SecurityBundle\Security\FirewallContext A Symfony\Bundle\SecurityBundle\Security\FirewallContext instance
+     */
+    protected function getSecurity_Firewall_Map_Context_ApiService()
+    {
+        $a = ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+
+        return $this->services['security.firewall.map.context.api'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener(${($_ = isset($this->services['security.authentication.guard_handler']) ? $this->services['security.authentication.guard_handler'] : $this->get('security.authentication.guard_handler')) && false ?: '_'}, ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'}, 'api', new RewindableGenerator(function () {
+            yield 0 => ${($_ = isset($this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator']) ? $this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator'] : $this->get('lexik_jwt_authentication.security.guard.jwt_token_authenticator')) && false ?: '_'};
+        }, 1), $a), 2 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener(${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'}, ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'}, ${($_ = isset($this->services['security.http_utils']) ? $this->services['security.http_utils'] : $this->getSecurity_HttpUtilsService()) && false ?: '_'}, 'api', ${($_ = isset($this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator']) ? $this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator'] : $this->get('lexik_jwt_authentication.security.guard.jwt_token_authenticator')) && false ?: '_'}, NULL, NULL, $a, true), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('api', 'security.user_checker', 'security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b', true, true, 'fos_user.user_provider.username', NULL, 'lexik_jwt_authentication.jwt_token_authenticator', NULL, NULL, array(0 => 'guard')));
+    }
+
+    /**
      * Gets the 'security.firewall.map.context.dev' service.
      *
      * This service is shared.
@@ -3820,6 +4039,24 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'security.firewall.map.context.login' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Symfony\Bundle\SecurityBundle\Security\FirewallContext A Symfony\Bundle\SecurityBundle\Security\FirewallContext instance
+     */
+    protected function getSecurity_Firewall_Map_Context_LoginService()
+    {
+        $a = ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'};
+        $b = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
+        $c = ${($_ = isset($this->services['security.http_utils']) ? $this->services['security.http_utils'] : $this->getSecurity_HttpUtilsService()) && false ?: '_'};
+        $d = ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+
+        return $this->services['security.firewall.map.context.login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $b, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $c, 'login', new \Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler(${($_ = isset($this->services['lexik_jwt_authentication.handler.authentication_success']) ? $this->services['lexik_jwt_authentication.handler.authentication_success'] : $this->get('lexik_jwt_authentication.handler.authentication_success')) && false ?: '_'}, array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false), 'login'), new \Symfony\Component\Security\Http\Authentication\CustomAuthenticationFailureHandler(${($_ = isset($this->services['lexik_jwt_authentication.handler.authentication_failure']) ? $this->services['lexik_jwt_authentication.handler.authentication_failure'] : $this->get('lexik_jwt_authentication.handler.authentication_failure')) && false ?: '_'}, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path')), array('check_path' => '/api/login_check', 'require_previous_session' => false, 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $d, ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'}, NULL), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '594a7d6b645531.99305258', $d, $b), 3 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'}, $c, 'login', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint(${($_ = isset($this->services['http_kernel']) ? $this->services['http_kernel'] : $this->get('http_kernel')) && false ?: '_'}, $c, '/login', false), NULL, NULL, $d, true), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('login', 'security.user_checker', 'security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442', true, true, 'fos_user.user_provider.username', NULL, 'security.authentication.form_entry_point.login', NULL, NULL, array(0 => 'form_login', 1 => 'anonymous')));
+    }
+
+    /**
      * Gets the 'security.firewall.map.context.main' service.
      *
      * This service is shared.
@@ -3829,53 +4066,31 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Firewall_Map_Context_MainService()
     {
-        $a = ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
-        $b = ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'};
+        $a = ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'};
+        $b = ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
         $c = ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
         $d = ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'};
-        $e = ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+        $e = ${($_ = isset($this->services['security.http_utils']) ? $this->services['security.http_utils'] : $this->getSecurity_HttpUtilsService()) && false ?: '_'};
         $f = ${($_ = isset($this->services['security.authentication.rememberme.services.simplehash.main']) ? $this->services['security.authentication.rememberme.services.simplehash.main'] : $this->getSecurity_Authentication_Rememberme_Services_Simplehash_MainService()) && false ?: '_'};
         $g = ${($_ = isset($this->services['http_kernel']) ? $this->services['http_kernel'] : $this->get('http_kernel')) && false ?: '_'};
         $h = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
         $i = ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'};
 
-        $j = new \Symfony\Component\HttpFoundation\RequestMatcher('^/login$');
+        $j = new \Symfony\Component\Security\Http\Firewall\LogoutListener($a, $e, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($e, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $j->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $j->addHandler($f);
 
-        $k = new \Symfony\Component\HttpFoundation\RequestMatcher('^/register');
+        $k = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($e, array());
+        $k->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $k->setProviderKey('main');
 
-        $l = new \Symfony\Component\HttpFoundation\RequestMatcher('^/resetting');
+        $l = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($g, $e, array(), $b);
+        $l->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin/');
+        $m = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $h, $i, $e, 'main', $k, $l, array('require_previous_session' => false, 'check_path' => '/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $b, $c, ${($_ = isset($this->services['security.csrf.token_manager']) ? $this->services['security.csrf.token_manager'] : $this->get('security.csrf.token_manager')) && false ?: '_'});
+        $m->setRememberMeServices($f);
 
-        $n = new \Symfony\Component\HttpFoundation\RequestMatcher('^/api/*');
-
-        $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/');
-
-        $p = new \Symfony\Component\Security\Http\AccessMap();
-        $p->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($k, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($l, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($m, array(0 => 'ROLE_ADMIN'), NULL);
-        $p->add($n, array(0 => 'ROLE_ADMIN'), NULL);
-        $p->add($o, array(0 => 'ROLE_USER'), NULL);
-
-        $q = new \Symfony\Component\Security\Http\HttpUtils($e, $e);
-
-        $r = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $q, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($q, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
-        $r->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
-        $r->addHandler($f);
-
-        $s = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($q, array());
-        $s->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $s->setProviderKey('main');
-
-        $t = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($g, $q, array(), $a);
-        $t->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
-
-        $u = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $h, $i, $q, 'main', $s, $t, array('require_previous_session' => false, 'check_path' => '/login_check', 'use_forward' => false, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, ${($_ = isset($this->services['security.csrf.token_manager']) ? $this->services['security.csrf.token_manager'] : $this->get('security.csrf.token_manager')) && false ?: '_'});
-        $u->setRememberMeServices($f);
-
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($p, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $r, 3 => $u, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $f, $h, $a, $c, true, $i), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '59494c65e09623.15076662', $a, $h), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $p, $h)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $q, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($g, $q, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'remember_me', 3 => 'anonymous')));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $b, $c, $d), 2 => $j, 3 => $m, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($a, $f, $h, $b, $c, true, $i), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '594a7d6b645531.99305258', $b, $h), 6 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $d, $e, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($g, $e, '/login', false), NULL, NULL, $b, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'remember_me', 3 => 'anonymous')));
     }
 
     /**
@@ -5371,7 +5586,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Annotations_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('jqHbP0ySND', 0, '9oaKxv+L47HQXPQQYO7p5y', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('jqHbP0ySND', 0, 'hRpcSky8wzI1zXFHCFLGxS', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -5415,7 +5630,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Serializer_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('BerUHlQwoo', 0, '9oaKxv+L47HQXPQQYO7p5y', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('BerUHlQwoo', 0, 'hRpcSky8wzI1zXFHCFLGxS', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -5434,7 +5649,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_System_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Uo4DiE059N', 0, '9oaKxv+L47HQXPQQYO7p5y', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Uo4DiE059N', 0, 'hRpcSky8wzI1zXFHCFLGxS', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -5470,7 +5685,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Validator_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('6UZ8mWL0HX', 0, '9oaKxv+L47HQXPQQYO7p5y', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('6UZ8mWL0HX', 0, 'hRpcSky8wzI1zXFHCFLGxS', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -5994,6 +6209,50 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'security.access_listener' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Http\Firewall\AccessListener A Symfony\Component\Security\Http\Firewall\AccessListener instance
+     */
+    protected function getSecurity_AccessListenerService()
+    {
+        return $this->services['security.access_listener'] = new \Symfony\Component\Security\Http\Firewall\AccessListener(${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'}, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, ${($_ = isset($this->services['security.access_map']) ? $this->services['security.access_map'] : $this->getSecurity_AccessMapService()) && false ?: '_'}, ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'});
+    }
+
+    /**
+     * Gets the 'security.access_map' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Http\AccessMap A Symfony\Component\Security\Http\AccessMap instance
+     */
+    protected function getSecurity_AccessMapService()
+    {
+        $this->services['security.access_map'] = $instance = new \Symfony\Component\Security\Http\AccessMap();
+
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/login$'), array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/register'), array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/resetting'), array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin/'), array(0 => 'ROLE_ADMIN'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/api/login'), array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/api'), array(0 => 'IS_AUTHENTICATED_FULLY'), NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/'), array(0 => 'ROLE_USER'), NULL);
+
+        return $instance;
+    }
+
+    /**
      * Gets the 'security.authentication.manager' service.
      *
      * This service is shared.
@@ -6008,14 +6267,34 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_Authentication_ManagerService()
     {
         $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(new RewindableGenerator(function () {
-            yield 0 => ${($_ = isset($this->services['security.authentication.provider.dao.main']) ? $this->services['security.authentication.provider.dao.main'] : $this->getSecurity_Authentication_Provider_Dao_MainService()) && false ?: '_'};
-            yield 1 => ${($_ = isset($this->services['security.authentication.provider.rememberme.main']) ? $this->services['security.authentication.provider.rememberme.main'] : $this->getSecurity_Authentication_Provider_Rememberme_MainService()) && false ?: '_'};
-            yield 2 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : $this->getSecurity_Authentication_Provider_Anonymous_MainService()) && false ?: '_'};
-        }, 3), true);
+            yield 0 => ${($_ = isset($this->services['security.authentication.provider.dao.login']) ? $this->services['security.authentication.provider.dao.login'] : $this->getSecurity_Authentication_Provider_Dao_LoginService()) && false ?: '_'};
+            yield 1 => ${($_ = isset($this->services['security.authentication.provider.anonymous.login']) ? $this->services['security.authentication.provider.anonymous.login'] : $this->getSecurity_Authentication_Provider_Anonymous_LoginService()) && false ?: '_'};
+            yield 2 => ${($_ = isset($this->services['security.authentication.provider.guard.api']) ? $this->services['security.authentication.provider.guard.api'] : $this->getSecurity_Authentication_Provider_Guard_ApiService()) && false ?: '_'};
+            yield 3 => ${($_ = isset($this->services['security.authentication.provider.dao.main']) ? $this->services['security.authentication.provider.dao.main'] : $this->getSecurity_Authentication_Provider_Dao_MainService()) && false ?: '_'};
+            yield 4 => ${($_ = isset($this->services['security.authentication.provider.rememberme.main']) ? $this->services['security.authentication.provider.rememberme.main'] : $this->getSecurity_Authentication_Provider_Rememberme_MainService()) && false ?: '_'};
+            yield 5 => ${($_ = isset($this->services['security.authentication.provider.anonymous.main']) ? $this->services['security.authentication.provider.anonymous.main'] : $this->getSecurity_Authentication_Provider_Anonymous_MainService()) && false ?: '_'};
+        }, 6), true);
 
         $instance->setEventDispatcher(${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher')) && false ?: '_'});
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'security.authentication.provider.anonymous.login' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider A Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider instance
+     */
+    protected function getSecurity_Authentication_Provider_Anonymous_LoginService()
+    {
+        return $this->services['security.authentication.provider.anonymous.login'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('594a7d6b645531.99305258');
     }
 
     /**
@@ -6032,7 +6311,24 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_Provider_Anonymous_MainService()
     {
-        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('59494c65e09623.15076662');
+        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('594a7d6b645531.99305258');
+    }
+
+    /**
+     * Gets the 'security.authentication.provider.dao.login' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider A Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider instance
+     */
+    protected function getSecurity_Authentication_Provider_Dao_LoginService()
+    {
+        return $this->services['security.authentication.provider.dao.login'] = new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}, ${($_ = isset($this->services['security.user_checker']) ? $this->services['security.user_checker'] : $this->getSecurity_UserCheckerService()) && false ?: '_'}, 'login', ${($_ = isset($this->services['security.encoder_factory']) ? $this->services['security.encoder_factory'] : $this->get('security.encoder_factory')) && false ?: '_'}, true);
     }
 
     /**
@@ -6050,6 +6346,25 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_Authentication_Provider_Dao_MainService()
     {
         return $this->services['security.authentication.provider.dao.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}, ${($_ = isset($this->services['security.user_checker']) ? $this->services['security.user_checker'] : $this->getSecurity_UserCheckerService()) && false ?: '_'}, 'main', ${($_ = isset($this->services['security.encoder_factory']) ? $this->services['security.encoder_factory'] : $this->get('security.encoder_factory')) && false ?: '_'}, true);
+    }
+
+    /**
+     * Gets the 'security.authentication.provider.guard.api' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider A Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider instance
+     */
+    protected function getSecurity_Authentication_Provider_Guard_ApiService()
+    {
+        return $this->services['security.authentication.provider.guard.api'] = new \Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider(new RewindableGenerator(function () {
+            yield 0 => ${($_ = isset($this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator']) ? $this->services['lexik_jwt_authentication.security.guard.jwt_token_authenticator'] : $this->get('lexik_jwt_authentication.security.guard.jwt_token_authenticator')) && false ?: '_'};
+        }, 1), ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}, 'api', ${($_ = isset($this->services['security.user_checker']) ? $this->services['security.user_checker'] : $this->getSecurity_UserCheckerService()) && false ?: '_'});
     }
 
     /**
@@ -6121,6 +6436,23 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'security.channel_listener' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Http\Firewall\ChannelListener A Symfony\Component\Security\Http\Firewall\ChannelListener instance
+     */
+    protected function getSecurity_ChannelListenerService()
+    {
+        return $this->services['security.channel_listener'] = new \Symfony\Component\Security\Http\Firewall\ChannelListener(${($_ = isset($this->services['security.access_map']) ? $this->services['security.access_map'] : $this->getSecurity_AccessMapService()) && false ?: '_'}, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), ${($_ = isset($this->services['monolog.logger.security']) ? $this->services['monolog.logger.security'] : $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+    }
+
+    /**
      * Gets the 'security.firewall.map' service.
      *
      * This service is shared.
@@ -6134,14 +6466,39 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Firewall_MapService()
     {
-        return $this->services['security.firewall.map'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallMap(new \Symfony\Component\DependencyInjection\ServiceLocator(array('security.firewall.map.context.dev' => function () {
+        return $this->services['security.firewall.map'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallMap(new \Symfony\Component\DependencyInjection\ServiceLocator(array('security.firewall.map.context.api' => function () {
+            return ${($_ = isset($this->services['security.firewall.map.context.api']) ? $this->services['security.firewall.map.context.api'] : $this->get('security.firewall.map.context.api')) && false ?: '_'};
+        }, 'security.firewall.map.context.dev' => function () {
             return ${($_ = isset($this->services['security.firewall.map.context.dev']) ? $this->services['security.firewall.map.context.dev'] : $this->get('security.firewall.map.context.dev')) && false ?: '_'};
+        }, 'security.firewall.map.context.login' => function () {
+            return ${($_ = isset($this->services['security.firewall.map.context.login']) ? $this->services['security.firewall.map.context.login'] : $this->get('security.firewall.map.context.login')) && false ?: '_'};
         }, 'security.firewall.map.context.main' => function () {
             return ${($_ = isset($this->services['security.firewall.map.context.main']) ? $this->services['security.firewall.map.context.main'] : $this->get('security.firewall.map.context.main')) && false ?: '_'};
         })), new RewindableGenerator(function () {
+            yield 'security.firewall.map.context.login' => ${($_ = isset($this->services['security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442']) ? $this->services['security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442'] : $this->getSecurity_RequestMatcher_0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442Service()) && false ?: '_'};
+            yield 'security.firewall.map.context.api' => ${($_ = isset($this->services['security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b']) ? $this->services['security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b'] : $this->getSecurity_RequestMatcher_83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11bService()) && false ?: '_'};
             yield 'security.firewall.map.context.dev' => ${($_ = isset($this->services['security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d']) ? $this->services['security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d'] : $this->getSecurity_RequestMatcher_5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1dService()) && false ?: '_'};
             yield 'security.firewall.map.context.main' => ${($_ = isset($this->services['security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db']) ? $this->services['security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db'] : $this->getSecurity_RequestMatcher_A64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60dbService()) && false ?: '_'};
-        }, 2));
+        }, 4));
+    }
+
+    /**
+     * Gets the 'security.http_utils' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\Security\Http\HttpUtils A Symfony\Component\Security\Http\HttpUtils instance
+     */
+    protected function getSecurity_HttpUtilsService()
+    {
+        $a = ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
+
+        return $this->services['security.http_utils'] = new \Symfony\Component\Security\Http\HttpUtils($a, $a);
     }
 
     /**
@@ -6166,6 +6523,23 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\HttpFoundation\RequestMatcher A Symfony\Component\HttpFoundation\RequestMatcher instance
+     */
+    protected function getSecurity_RequestMatcher_0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442Service()
+    {
+        return $this->services['security.request_matcher.0f5b08f651583fd992ff0203b6568f57f72cdce151a9ae850abcdf65ed2efdf00554c442'] = new \Symfony\Component\HttpFoundation\RequestMatcher('^/api/login');
+    }
+
+    /**
      * Gets the 'security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d' service.
      *
      * This service is shared.
@@ -6180,6 +6554,23 @@ class appDevDebugProjectContainer extends Container
     protected function getSecurity_RequestMatcher_5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1dService()
     {
         return $this->services['security.request_matcher.5314eeb91110adf24b9b678372bb11bbe00e8858c519c088bfb65f525181ad3bf573fd1d'] = new \Symfony\Component\HttpFoundation\RequestMatcher('^/(_(profiler|wdt)|css|images|js)/');
+    }
+
+    /**
+     * Gets the 'security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return \Symfony\Component\HttpFoundation\RequestMatcher A Symfony\Component\HttpFoundation\RequestMatcher instance
+     */
+    protected function getSecurity_RequestMatcher_83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11bService()
+    {
+        return $this->services['security.request_matcher.83414b4f59ab53f8865b08d5074e037efbb06e57ccba58ede5e1ed417a9ddcd1b645c11b'] = new \Symfony\Component\HttpFoundation\RequestMatcher('^/api');
     }
 
     /**
@@ -6437,8 +6828,12 @@ class appDevDebugProjectContainer extends Container
         'kernel.project_dir' => false,
         'kernel.logs_dir' => false,
         'kernel.bundles_metadata' => false,
+        'jwt_private_key_path' => false,
+        'jwt_public_key_path' => false,
         'session.save_path' => false,
         'router.resource' => false,
+        'lexik_jwt_authentication.private_key_path' => false,
+        'lexik_jwt_authentication.public_key_path' => false,
     );
     private $dynamicParameters = array();
 
@@ -6523,6 +6918,11 @@ class appDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle'),
                     'namespace' => 'Nelmio\\ApiDocBundle',
                 ),
+                'LexikJWTAuthenticationBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/lexik/jwt-authentication-bundle'),
+                    'namespace' => 'Lexik\\Bundle\\JWTAuthenticationBundle',
+                ),
                 'DebugBundle' => array(
                     'parent' => NULL,
                     'path' => ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle'),
@@ -6549,8 +6949,12 @@ class appDevDebugProjectContainer extends Container
                     'namespace' => 'Symfony\\Bundle\\WebServerBundle',
                 ),
             ); break;
+            case 'jwt_private_key_path': $value = ($this->targetDirs[3].'/app/../var/jwt/private.pem'); break;
+            case 'jwt_public_key_path': $value = ($this->targetDirs[3].'/app/../var/jwt/public.pem'); break;
             case 'session.save_path': $value = ($this->targetDirs[2].'/sessions/dev'); break;
             case 'router.resource': $value = ($this->targetDirs[3].'/app/config/routing_dev.yml'); break;
+            case 'lexik_jwt_authentication.private_key_path': $value = ($this->targetDirs[3].'/app/../var/jwt/private.pem'); break;
+            case 'lexik_jwt_authentication.public_key_path': $value = ($this->targetDirs[3].'/app/../var/jwt/public.pem'); break;
             default: throw new InvalidArgumentException(sprintf('The dynamic parameter "%s" must be defined.', $name));
         }
         $this->loadedDynamicParameters[$name] = true;
@@ -6584,6 +6988,7 @@ class appDevDebugProjectContainer extends Container
                 'JMSSerializerBundle' => 'JMS\\SerializerBundle\\JMSSerializerBundle',
                 'NelmioCorsBundle' => 'Nelmio\\CorsBundle\\NelmioCorsBundle',
                 'NelmioApiDocBundle' => 'Nelmio\\ApiDocBundle\\NelmioApiDocBundle',
+                'LexikJWTAuthenticationBundle' => 'Lexik\\Bundle\\JWTAuthenticationBundle\\LexikJWTAuthenticationBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -6605,6 +7010,8 @@ class appDevDebugProjectContainer extends Container
             'cors_allow_origin' => 'http://localhost',
             'api_name' => 'bank',
             'api_description' => 'The full description of your API',
+            'jwt_key_pass_phrase' => '123456',
+            'jwt_token_ttl' => 3600,
             'locale' => 'en',
             'fragment.renderer.hinclude.global_template' => NULL,
             'fragment.path' => '/_fragment',
@@ -7027,6 +7434,11 @@ class appDevDebugProjectContainer extends Container
                 'licenseUrl' => NULL,
             ),
             'nelmio_api_doc.swagger.model_naming_strategy' => 'dot_notation',
+            'lexik_jwt_authentication.pass_phrase' => '123456',
+            'lexik_jwt_authentication.token_ttl' => 3600,
+            'lexik_jwt_authentication.user_identity_field' => 'username',
+            'lexik_jwt_authentication.encoder.signature_algorithm' => 'RS256',
+            'lexik_jwt_authentication.encoder.crypto_engine' => 'openssl',
             'web_profiler.debug_toolbar.position' => 'bottom',
             'web_profiler.debug_toolbar.intercept_redirects' => false,
             'web_profiler.debug_toolbar.mode' => 2,

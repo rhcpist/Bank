@@ -107,14 +107,14 @@ fos_rest:
     exception:
         enabled: true
 
-# JMS Serializer
+# JMS Serializer configuration
 jms_serializer:
     handlers:
         datetime:
             default_format: "Y-m-d"
             default_timezone: "Europe/Kiev"
 
-# FOS USER Bundle config
+# FOS USER Bundle configuration
 fos_user:
     db_driver: orm
     firewall_name: main
@@ -122,3 +122,10 @@ fos_user:
     from_email:
         address: admin@mail.com
         sender_name: admin
+
+# Lexic JWT Auth configuration
+lexik_jwt_authentication:
+    private_key_path: '%jwt_private_key_path%'
+    public_key_path:  '%jwt_public_key_path%'
+    pass_phrase:      '%jwt_key_pass_phrase%'
+    token_ttl:        '%jwt_token_ttl%'

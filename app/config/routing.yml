@@ -13,3 +13,6 @@ api:
 app:
     type: annotation
     resource: "@AppBundle/Controller"
+
+api_login_check:
+    path: /api/login_check

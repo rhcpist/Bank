@@ -382,6 +382,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_delete_transaction:
 
+            // api_login_check
+            if ('/api/login_check' === $pathinfo) {
+                return array('_route' => 'api_login_check');
+            }
+
         }
 
         // app_transaction_add
