@@ -10,14 +10,16 @@
 {% block javascripts %}
     <script>
         $(document).ready(function(){
-            $('#dataTable').DataTable({
+
+            var table = $('#dataTable').DataTable({
                 data: {{ transactions | json_encode() | raw }},
                 columns: [
                     { title: "Transaction Id",  data: 'id' },
                     { title: "Amount $", data: 'amount' },
                     { title: "Date", data: 'date' },
                     { title: "Customer name", data: 'name' },
-                    { title: "Customer CNP", data: 'cnp' }
+                    { title: "Customer CNP", data: 'cnp' },
+                    { title: "Customer Id", data: 'customId' }
                 ],
                 pageLength: 10,
                 lengthMenu: [ 5, 10, 50 ]

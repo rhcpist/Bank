@@ -50,7 +50,7 @@ class TransactionRepository extends EntityRepository
     {
         $query = $this->getEntityManager()->createQuery(
             "
-                SELECT tr.id, tr.amount, tr.date, c.name, c.cnp
+                SELECT tr.id, tr.amount, tr.date, c.name, c.cnp, tr.customId
                 FROM AppBundle:Transaction tr
                 LEFT JOIN AppBundle:Customer c WITH c.id = tr.customId
             "
