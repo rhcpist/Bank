@@ -43,12 +43,14 @@ class __TwigTemplate_d928479c51159d78cb68e521b10da375970bc053edc8181ae5aa2cadc0a
 
     <!-- Latest compiled and minified CSS -->
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
+    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css\">
     <!-- Latest compiled and minified JavaScript -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>
     <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
+    <script src=\"https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js\"></script>
     <![endif]-->
 </head>
 
@@ -56,9 +58,9 @@ class __TwigTemplate_d928479c51159d78cb68e521b10da375970bc053edc8181ae5aa2cadc0a
 
 <div class=\"container\">
     ";
-        // line 30
+        // line 32
         $this->displayBlock('content', $context, $blocks);
-        // line 31
+        // line 33
         echo "</div>
 
 
@@ -67,10 +69,11 @@ class __TwigTemplate_d928479c51159d78cb68e521b10da375970bc053edc8181ae5aa2cadc0a
 <!-- Placed at the end of the document so the pages load faster -->
 <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>
 <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>
+<script src=\"https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js\"></script>
 ";
-        // line 39
+        // line 42
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 40
+        // line 43
         echo "</body>
 </html>";
     }
@@ -83,15 +86,15 @@ class __TwigTemplate_d928479c51159d78cb68e521b10da375970bc053edc8181ae5aa2cadc0a
     // line 13
     public function block_title($context, array $blocks = array())
     {
-        echo "Something Clever Here!";
+        echo "Bank info datatable";
     }
 
-    // line 30
+    // line 32
     public function block_content($context, array $blocks = array())
     {
     }
 
-    // line 39
+    // line 42
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -103,7 +106,7 @@ class __TwigTemplate_d928479c51159d78cb68e521b10da375970bc053edc8181ae5aa2cadc0a
 
     public function getDebugInfo()
     {
-        return array (  95 => 39,  90 => 30,  84 => 13,  79 => 11,  74 => 40,  72 => 39,  62 => 31,  60 => 30,  40 => 13,  37 => 12,  35 => 11,  23 => 1,);
+        return array (  98 => 42,  93 => 32,  87 => 13,  82 => 11,  77 => 43,  75 => 42,  64 => 33,  62 => 32,  40 => 13,  37 => 12,  35 => 11,  23 => 1,);
     }
 
     public function getSourceContext()

@@ -8,11 +8,9 @@ use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -28,19 +26,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
 class TransactionController extends FOSRestController implements ClassResourceInterface
 {
+
     /**
-     * Gets Transaction
-     *
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     *
-     * @ApiDoc(
-     *     output="AppBundle\Entity\Transaction",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *         404 = "Return when not found"
-     *     }
-     * )
      * @Get("/transaction/{customId}/{transId}")
      * @Cache(public=true, maxage="3600", smaxage="3600")
      */
@@ -61,7 +48,6 @@ class TransactionController extends FOSRestController implements ClassResourceIn
     }
 
     /**
-     *
      * @Post("/add_transaction/{customId}/{amount}")
      * @Cache(public=true, maxage="3600", smaxage="3600")
      */

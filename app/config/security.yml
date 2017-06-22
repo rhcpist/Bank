@@ -39,7 +39,7 @@ security:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
-                csrf_token_generator: security.csrf.token_manager
+                #csrf_token_generator: security.csrf.token_manager
                 require_previous_session: false
 
             logout:       true

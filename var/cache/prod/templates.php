@@ -117,5 +117,6 @@
   'NelmioApiDocBundle::resources.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/resources.html.twig',
   'NelmioApiDocBundle::layout.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/layout.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
+  ':default:content.html.twig' => __DIR__.'/../../../app/Resources/views/default/content.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
 );

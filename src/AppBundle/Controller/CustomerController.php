@@ -8,7 +8,6 @@ use FOS\RestBundle\Controller\Annotations;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,16 +30,7 @@ class CustomerController extends FOSRestController implements ClassResourceInter
      * @param string $name
      * @param string $cnp
      * @return int
-     * @throws \Doctrine\ORM\NoResultException
-     * @throws \Doctrine\ORM\NonUniqueResultException
      *
-     * @ApiDoc(
-     *     output="AppBundle\Entity\Customer",
-     *     statusCodes={
-     *         200 = "Returned when successful",
-     *         404 = "Return when not found"
-     *     }
-     * )
      * @Post("/customer/{name}/{cnp}")
      * @Cache(public=true, maxage="3600", smaxage="3600")
      */

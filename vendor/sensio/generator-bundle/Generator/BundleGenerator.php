@@ -60,7 +60,7 @@ class BundleGenerator extends Generator
         }
         $this->renderFile('bundle/DefaultController.php.twig', $dir.'/Controller/DefaultController.php', $parameters);
         $this->renderFile('bundle/DefaultControllerTest.php.twig', $bundle->getTestsDirectory().'/Controller/DefaultControllerTest.php', $parameters);
-        $this->renderFile('bundle/index.html.twig.twig', $dir.'/Resources/views/Default/index.html.twig', $parameters);
+        $this->renderFile('bundle/content.html.twig.twig', $dir.'/Resources/views/Default/content.html.twig', $parameters);
 
         // render the services.yml/xml file
         $servicesFilename = $bundle->getServicesConfigurationFilename();

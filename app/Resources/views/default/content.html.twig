@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <h1 style="text-align: center">List of Transactions</h1>
+    <a href="/logout">Log out</a>
+    <div class="row" style="margin: 20px 0;">
+        <table id="dataTable" class="display"></table>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function(){
+            $('#dataTable').DataTable({
+                data: {{ transactions | json_encode() | raw }},
+                columns: [
+                    { title: "Transaction Id",  data: 'id' },
+                    { title: "Amount $", data: 'amount' },
+                    { title: "Date", data: 'date' },
+                    { title: "Customer name", data: 'name' },
+                    { title: "Customer CNP", data: 'cnp' }
+                ],
+                pageLength: 10,
+                lengthMenu: [ 5, 10, 50 ]
+            });
+        });
+    </script>
+{% endblock %}

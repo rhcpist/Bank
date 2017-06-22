@@ -50,11 +50,11 @@ class __TwigTemplate_d2dd4a0406b0b0b4a4cfabd77c730720e97031998fa8b4d4748e4f2d159
         ";
         } else {
             // line 12
-            echo "            <a href=\"";
+            echo "            <!--<a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
             echo "\">";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
-            echo "</a>
+            echo "</a>-->
         ";
         }
         // line 14

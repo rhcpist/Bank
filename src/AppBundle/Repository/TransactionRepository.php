@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query;
 
 /**
  * TransactionRepository
@@ -43,5 +44,17 @@ class TransactionRepository extends EntityRepository
             array('customId' => $customId, 'amount' => $amount, 'date' => $date)
         );
         return $query->getResult();
+    }
+
+    public function getAllTransactions()
+    {
+        $query = $this->getEntityManager()->createQuery(
+            "
+                SELECT tr.id, tr.amount, tr.date, c.name, c.cnp
+                FROM AppBundle:Transaction tr
+                LEFT JOIN AppBundle:Customer c WITH c.id = tr.customId
+            "
+        );
+        return $query->getResult(Query::HYDRATE_SCALAR);
     }
 }
