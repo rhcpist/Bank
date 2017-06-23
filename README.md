@@ -1,6 +1,3 @@
-API/GUI Basic Application
-====
-
 # Bank API
 
 Symfony project that handles request / responses for a made up BANK.
