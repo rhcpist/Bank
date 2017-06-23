@@ -1,0 +1,1 @@
+47 23 */2 * * /bin/bash /path/to/file/bank/cron.sh >/dev/null 2>&1
