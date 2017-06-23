@@ -3,13 +3,29 @@
     <h1 style="text-align: center">List of Transactions</h1>
     <a href="/logout">Log out</a>
     <div class="row" style="margin: 20px 0;">
-        <table id="dataTable" class="display"></table>
+        <table id="dataTable" class="display">
+            <tfoot>
+            <tr>
+                <th>Transaction Id</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Customer name</th>
+                <th>Customer CNP</th>
+                <th>Customer Id</th>
+            </tr>
+            </tfoot>
+        </table>
     </div>
 {% endblock %}
 
 {% block javascripts %}
     <script>
         $(document).ready(function(){
+
+            $('#dataTable tfoot th').each( function () {
+                var title = $(this).text();
+                $(this).html( '<input type="text" class="form-control" placeholder="Search '+title+'" />' );
+            } );
 
             var table = $('#dataTable').DataTable({
                 data: {{ transactions | json_encode() | raw }},
@@ -24,6 +40,16 @@
                 pageLength: 10,
                 lengthMenu: [ 5, 10, 50 ]
             });
+
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that.search( this.value ).draw();
+                    }
+                } );
+            } );
         });
     </script>
 {% endblock %}

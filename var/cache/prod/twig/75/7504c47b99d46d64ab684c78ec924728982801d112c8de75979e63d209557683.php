@@ -32,20 +32,37 @@ class __TwigTemplate_8deb7a41e107e4aff1fd0dfcb0f62b8ab7bf818622b4449a465cfa1dbde
         echo "    <h1 style=\"text-align: center\">List of Transactions</h1>
     <a href=\"/logout\">Log out</a>
     <div class=\"row\" style=\"margin: 20px 0;\">
-        <table id=\"dataTable\" class=\"display\"></table>
+        <table id=\"dataTable\" class=\"display\">
+            <tfoot>
+            <tr>
+                <th>Transaction Id</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Customer name</th>
+                <th>Customer CNP</th>
+                <th>Customer Id</th>
+            </tr>
+            </tfoot>
+        </table>
     </div>
 ";
     }
 
-    // line 10
+    // line 21
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 11
+        // line 22
         echo "    <script>
         \$(document).ready(function(){
-            \$('#dataTable').DataTable({
+
+            \$('#dataTable tfoot th').each( function () {
+                var title = \$(this).text();
+                \$(this).html( '<input type=\"text\" class=\"form-control\" placeholder=\"Search '+title+'\" />' );
+            } );
+
+            var table = \$('#dataTable').DataTable({
                 data: ";
-        // line 14
+        // line 31
         echo json_encode(($context["transactions"] ?? null));
         echo ",
                 columns: [
@@ -53,11 +70,22 @@ class __TwigTemplate_8deb7a41e107e4aff1fd0dfcb0f62b8ab7bf818622b4449a465cfa1dbde
                     { title: \"Amount \$\", data: 'amount' },
                     { title: \"Date\", data: 'date' },
                     { title: \"Customer name\", data: 'name' },
-                    { title: \"Customer CNP\", data: 'cnp' }
+                    { title: \"Customer CNP\", data: 'cnp' },
+                    { title: \"Customer Id\", data: 'customId' }
                 ],
                 pageLength: 10,
                 lengthMenu: [ 5, 10, 50 ]
             });
+
+            table.columns().every( function () {
+                var that = this;
+
+                \$( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that.search( this.value ).draw();
+                    }
+                } );
+            } );
         });
     </script>
 ";
@@ -75,7 +103,7 @@ class __TwigTemplate_8deb7a41e107e4aff1fd0dfcb0f62b8ab7bf818622b4449a465cfa1dbde
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  44 => 11,  41 => 10,  32 => 3,  29 => 2,  11 => 1,);
+        return array (  66 => 31,  55 => 22,  52 => 21,  32 => 3,  29 => 2,  11 => 1,);
     }
 
     public function getSourceContext()
